@@ -28,25 +28,25 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, isRTL }) => 
   const currentIndex = getStepIndex(currentStep);
 
   return (
-    <div className="flex items-center justify-between w-full max-w-3xl mx-auto px-10 mb-6 lg:mb-12">
+    <div className="flex items-center justify-between w-full max-w-2xl mx-auto px-4 sm:px-10 mb-2 sm:mb-6 lg:mb-8 shrink-0">
       {steps.map((step, idx) => (
         <React.Fragment key={step.key}>
           <div className="flex flex-col items-center relative">
-            <div className={`w-10 h-10 lg:w-14 lg:h-14 rounded-3xl flex items-center justify-center text-lg lg:text-2xl font-black transition-all duration-500 z-10 ${
+            <div className={`w-7 h-7 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-2xl flex items-center justify-center text-xs sm:text-lg lg:text-xl font-black transition-all duration-500 z-10 ${
               idx <= currentIndex 
-                ? 'bg-blue-600 text-white shadow-xl shadow-blue-200' 
-                : 'bg-white border-2 border-slate-100 text-slate-300'
+                ? 'bg-blue-600 text-white shadow-lg shadow-blue-200' 
+                : 'bg-white border border-slate-100 text-slate-300'
             }`}>
               {idx + 1}
             </div>
-            <span className={`absolute -bottom-8 lg:-bottom-10 whitespace-nowrap text-[10px] lg:text-xs font-black uppercase tracking-[0.2em] transition-all duration-500 ${
-              idx === currentIndex ? 'text-blue-900 opacity-100 translate-y-0' : 'text-slate-300 opacity-0 lg:opacity-100 translate-y-1'
+            <span className={`absolute -bottom-4 sm:-bottom-7 whitespace-nowrap text-[8px] sm:text-[10px] font-black uppercase tracking-tighter sm:tracking-[0.1em] transition-all duration-500 ${
+              idx === currentIndex ? 'text-blue-900 opacity-100' : 'text-slate-300 opacity-0 sm:opacity-100'
             }`}>
               {step.label}
             </span>
           </div>
           {idx < steps.length - 1 && (
-            <div className={`flex-1 h-1.5 lg:h-2 mx-1 lg:mx-3 rounded-full transition-all duration-700 bg-slate-100 relative overflow-hidden`}>
+            <div className={`flex-1 h-1 sm:h-1.5 mx-1 sm:mx-3 rounded-full bg-slate-100 relative overflow-hidden`}>
                 <div 
                   className={`absolute inset-0 bg-blue-600 transition-all duration-700 ease-in-out ${isRTL ? 'right-0' : 'left-0'}`} 
                   style={{ width: idx < currentIndex ? '100%' : '0%' }}
