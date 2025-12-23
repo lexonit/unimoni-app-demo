@@ -1,33 +1,41 @@
 
 import React from 'react';
 import { Delete } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface KeypadProps {
   onKeyPress: (key: string) => void;
   onDelete: () => void;
   className?: string;
+  compact?: boolean;
 }
 
-const Keypad: React.FC<KeypadProps> = ({ onKeyPress, onDelete, className = '' }) => {
+const Keypad: React.FC<KeypadProps> = ({ onKeyPress, onDelete, className = '', compact = false }) => {
   const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '0'];
 
   return (
-    <div className={`grid grid-cols-3 gap-1.5 sm:gap-2 lg:gap-3 ${className}`}>
+    <div className={`grid grid-cols-3 gap-2 md:gap-3 ${className}`}>
       {keys.map((key) => (
-        <button
+        <motion.button
           key={key}
+          whileTap={{ scale: 0.9, backgroundColor: '#00ADEF', color: '#ffffff' }}
           onClick={() => onKeyPress(key)}
-          className="h-12 sm:h-14 lg:h-16 flex items-center justify-center bg-white border border-slate-200 rounded-xl text-lg sm:text-xl lg:text-2xl font-bold text-slate-700 active:bg-blue-600 active:text-white active:scale-95 transition-all shadow-sm select-none"
+          className={`${
+            compact ? 'h-10 md:h-14 lg:h-20 text-lg md:text-xl lg:text-3xl' : 'h-14 md:h-16 lg:h-28 text-xl md:text-2xl lg:text-5xl'
+          } flex items-center justify-center bg-white border border-slate-100 rounded-xl md:rounded-2xl font-black text-slate-700 transition-colors shadow-sm select-none active:border-[#00ADEF]`}
         >
           {key}
-        </button>
+        </motion.button>
       ))}
-      <button
+      <motion.button
+        whileTap={{ scale: 0.9, backgroundColor: '#ef4444', color: '#ffffff' }}
         onClick={onDelete}
-        className="h-12 sm:h-14 lg:h-16 flex items-center justify-center bg-slate-100 border border-slate-200 rounded-xl text-slate-700 active:bg-red-500 active:text-white active:scale-95 transition-all shadow-sm select-none"
+        className={`${
+          compact ? 'h-10 md:h-14 lg:h-20' : 'h-14 md:h-16 lg:h-28'
+        } flex items-center justify-center bg-slate-50 border border-slate-100 rounded-xl md:rounded-2xl text-slate-400 transition-colors shadow-sm select-none`}
       >
-        <Delete className="w-5 h-5 sm:w-6 h-6 lg:w-8 lg:h-8" />
-      </button>
+        <Delete className={compact ? 'w-5 h-5 md:w-6 md:h-6 lg:w-10 lg:h-10' : 'w-6 h-6 md:w-8 md:h-8 lg:w-14 lg:h-14'} />
+      </motion.button>
     </div>
   );
 };

@@ -9,7 +9,7 @@ export const translations = {
     featureRealtime: "Real-time",
     featureBestRates: "Best Rates",
     loginTitle: "Identity",
-    loginDesc: "Enter your ID or type your phone number.",
+    loginDesc: "Enter your ID or type your number.",
     otpTitle: "OTP Code",
     otpDesc: "Enter the code sent to your device.",
     idLabel: "Enter National ID",

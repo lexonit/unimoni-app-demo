@@ -1,8 +1,8 @@
 import { Beneficiary } from './types';
 
 export const COLORS = {
-  primary: '#0055A4', // Unimoni deep blue
-  secondary: '#00A3E0', // Unimoni bright blue
+  primary: '#003D7E', // Unimoni Deep Navy
+  secondary: '#00ADEF', // Unimoni Bright Cyan
   accent: '#F2A900', // Gold accent
   bg: '#F8FAFC'
 };
