@@ -1,4 +1,3 @@
-
 import { Beneficiary } from './types';
 
 export const COLORS = {
@@ -16,7 +15,7 @@ export const MOCK_BENEFICIARIES: Beneficiary[] = [
     accountNumber: '**** 5678',
     bankName: 'HDFC Bank',
     currency: 'INR',
-    avatar: 'https://picsum.photos/seed/rahul/100/100'
+    avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=400&fit=crop'
   },
   {
     id: '2',
@@ -25,7 +24,7 @@ export const MOCK_BENEFICIARIES: Beneficiary[] = [
     accountNumber: '**** 1234',
     bankName: 'Bank Central Asia',
     currency: 'IDR',
-    avatar: 'https://picsum.photos/seed/siti/100/100'
+    avatar: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=400&fit=crop'
   },
   {
     id: '3',
@@ -34,7 +33,7 @@ export const MOCK_BENEFICIARIES: Beneficiary[] = [
     accountNumber: '**** 9012',
     bankName: 'BDO Unibank',
     currency: 'PHP',
-    avatar: 'https://picsum.photos/seed/juan/100/100'
+    avatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=400&fit=crop'
   },
   {
     id: '4',
@@ -43,13 +42,14 @@ export const MOCK_BENEFICIARIES: Beneficiary[] = [
     accountNumber: '**** 3456',
     bankName: 'National Bank of Egypt',
     currency: 'EGP',
-    avatar: 'https://picsum.photos/seed/ahmed/100/100'
+    avatar: 'https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?w=400&h=400&fit=crop'
   }
 ];
 
+// Updated rates relative to 1 OMR (Oman Rial)
 export const EXCHANGE_RATES: Record<string, number> = {
-  INR: 22.85,
-  IDR: 4250.20,
-  PHP: 15.30,
-  EGP: 8.45
+  INR: 217.45,
+  IDR: 40550.00,
+  PHP: 145.80,
+  EGP: 126.35
 };
